@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "#WorldComplete.gd
+extends Area2D
+export(String, FILE, \"*.tscn\") var world_scene
+
+func _on_WorldComplete_body_entered(body):
+	if body.name == \"Player\":
+		if PlayerTransition.pieCount == 4:
+			PlayerTransition._playerDie(world_scene)
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 88, 48 )
+
+[node name="World Fallen" type="Area2D"]
+script = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 16 )
+shape = SubResource( 1 )

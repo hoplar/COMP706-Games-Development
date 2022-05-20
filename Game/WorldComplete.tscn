@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Objects/Plane.png" type="Texture" id=1]
+[ext_resource path="res://WorldComplete.gd" type="Script" id=2]
+[ext_resource path="res://Font/upheavtt.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 88, 48 )
+
+[node name="WorldComplete" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -16.0
+margin_top = -80.0
+margin_right = 24.0
+margin_bottom = -65.0
+custom_fonts/font = SubResource( 2 )
+text = "Exit"
+
+[node name="Icon" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 16 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_WorldComplete_body_entered"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dodge Ball Bounce-[AudioTrimmer.com].mp3-8da09651dac921c81d8d8c36d0df762b.mp3str"
+
+[deps]
+
+source_file="res://Music/Dodge Ball Bounce-[AudioTrimmer.com].mp3"
+dest_files=[ "res://.import/Dodge Ball Bounce-[AudioTrimmer.com].mp3-8da09651dac921c81d8d8c36d0df762b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

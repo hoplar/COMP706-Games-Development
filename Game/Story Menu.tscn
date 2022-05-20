@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Font/upheavtt.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/BG/Sky.png" type="Texture" id=2]
+[ext_resource path="res://Font/Mario-Kart-DS.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://FlatUI/kenneyUI.tres" type="Theme" id=4]
+[ext_resource path="res://Story Menu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[node name="Story Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 384, 240 )
+scale = Vector2( 1.97935, 1.21539 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 136 )
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+margin_left = 260.0
+margin_top = 50.0
+margin_right = 380.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.137255, 0.470588, 0.611765, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = -2
+custom_fonts/font = SubResource( 5 )
+text = "Story"
+align = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 140.0
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer2"]
+margin_left = 17.0
+margin_top = 48.0
+margin_right = 623.0
+margin_bottom = 171.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "After attending the great pie convention dangerous dag 
+is taking a break next to his airplane. 
+
+A freak gust of wind manages to pick up some of the pies that were 
+attached to balloons and steal them away into the sky.
+
+In a panic, Dag hops into the plane to peruse the escapee pies"
+align = 1
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 288.0
+margin_top = 320.0
+margin_right = 346.324
+margin_bottom = 357.251
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 4 )
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

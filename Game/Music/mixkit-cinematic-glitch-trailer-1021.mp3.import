@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-cinematic-glitch-trailer-1021.mp3-c993fa86eae0ab610b5ca2d849e57d49.mp3str"
+
+[deps]
+
+source_file="res://Music/mixkit-cinematic-glitch-trailer-1021.mp3"
+dest_files=[ "res://.import/mixkit-cinematic-glitch-trailer-1021.mp3-c993fa86eae0ab610b5ca2d849e57d49.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

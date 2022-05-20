@@ -1,0 +1,141 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://WorldComplete.tscn" type="PackedScene" id=2]
+[ext_resource path="res://CloudAutoTile.tres" type="TileSet" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://BloonBoi.tscn" type="PackedScene" id=5]
+[ext_resource path="res://WindUpdraft.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Parallax.tscn" type="PackedScene" id=7]
+[ext_resource path="res://BirdFollow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Pie.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World1.gd" type="Script" id=10]
+[ext_resource path="res://Cloud Platform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://BirdSetPath.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="World2" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Parallax" parent="." instance=ExtResource( 7 )]
+position = Vector2( 144, 64 )
+rotation = 3.14159
+scale = Vector2( 1, -4 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="TileMap2" type="TileMap" parent="."]
+material = SubResource( 2 )
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( -786424, 1, 196608, -786423, 1, 196610, -786417, 1, 1, -786416, 1, 65536, -786415, 1, 9, -786414, 1, 196609, -786413, 1, 10, -786412, 1, 9, -786411, 1, 196610, -720884, 1, 196608, -720883, 1, 196609, -720882, 1, 196609, -720881, 1, 65544, -720880, 1, 4, -720879, 1, 131074, -720877, 1, 65537, -720876, 1, 65538, -655344, 1, 65537, -655343, 1, 65538, -327682, 1, 196608, -327681, 1, 131076, -393216, 1, 196610, -393208, 1, 196608, -393207, 1, 196610, -393205, 1, 1, -393204, 1, 9, -393203, 1, 196610, -262145, 1, 131077, -327670, 1, 196608, -327669, 1, 65544, -327668, 1, 65538, 196615, 1, 196613, 327678, 1, 196608, 327679, 1, 196609, 262144, 1, 196610, 262158, 1, 196608, 262159, 1, 10, 262160, 1, 2, 262162, 1, 196613, 327695, 1, 65537, 327696, 1, 65538 )
+
+[node name="BloonBoi" parent="." instance=ExtResource( 5 )]
+position = Vector2( 416, -384 )
+
+[node name="BloonBoi2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 320, -384 )
+
+[node name="BloonBoi3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 224, -384 )
+
+[node name="BloonBoi4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 128, -384 )
+
+[node name="BloonBoi5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 128, -800 )
+
+[node name="BloonBoi6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 224, -800 )
+
+[node name="BloonBoi7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 320, -800 )
+
+[node name="BloonBoi8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 416, -800 )
+
+[node name="WindUpdraft" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1120, 128 )
+rotation = 3.14159
+scale = Vector2( 1, -4 )
+
+[node name="WindUpdraft2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 960, -256 )
+rotation = 3.14159
+scale = Vector2( 1.04529, -6.15385 )
+
+[node name="Pie" parent="." instance=ExtResource( 9 )]
+position = Vector2( 480, 160 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Pie2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 864, -448 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Pie3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1184, 224 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Pie4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 576, -832 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Cloud Platform" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, 288 )
+scale = Vector2( 2, 2 )
+move_direction = Vector2( 1, 0 )
+
+[node name="Cloud Platform2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 672, 288 )
+scale = Vector2( 2, 2 )
+move_direction = Vector2( -1, 0 )
+
+[node name="Cloud Platform3" parent="." instance=ExtResource( 11 )]
+position = Vector2( -32, -576 )
+scale = Vector2( 2, 2 )
+move_distance = 150.0
+move_direction = Vector2( 0, 1 )
+
+[node name="BirdFollow" parent="." instance=ExtResource( 8 )]
+position = Vector2( -768, 96 )
+scale = Vector2( 2, 2 )
+world_scene = "res://World2.tscn"
+
+[node name="BirdSetPath" parent="." instance=ExtResource( 12 )]
+position = Vector2( 672, 224 )
+scale = Vector2( 2, 2 )
+world_scene = "res://World2.tscn"
+move_speed = 0.8
+move_direction = Vector2( 1, 0 )
+
+[node name="BirdSetPath2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 288, -416 )
+scale = Vector2( 2, 2 )
+world_scene = "res://World2.tscn"
+move_direction = Vector2( 1, 0 )
+
+[node name="BirdSetPath3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 288, -832 )
+scale = Vector2( 2, 2 )
+world_scene = "res://World2.tscn"
+move_direction = Vector2( 1, 0 )
+
+[node name="Level Complete" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1169, -828 )
+world_scene_next = "res://EndScreen.tscn"
+
+[node name="Level Complete2" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 345, 667 )
+scale = Vector2( 17.038, -0.239347 )
+world_scene_next = "res://World2.tscn"
+world_scene = "res://World2.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -96, 224 )
+
+[connection signal="body_exited" from="WindUpdraft" to="BloonBoi" method="_on_WindUpdraft_body_exited"]
+[connection signal="body_exited" from="WindUpdraft2" to="BloonBoi" method="_on_WindUpdraft_body_exited"]
